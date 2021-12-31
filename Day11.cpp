@@ -83,7 +83,7 @@ int main(){
 	obj.enqueue(7);
 	obj.enqueue(9);
 	obj.enqueue(10);
-	cout << obj.dequeue() << "\n";
+	obj.dequeue();
 	obj.dequeue();
 	obj.enqueue(17);
 	obj.dequeue();

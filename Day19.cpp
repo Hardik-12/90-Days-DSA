@@ -55,15 +55,17 @@ struct MinHeap{
 	}
 
 	// If root is violating the min-heap property
-	void heapify(int idx){
+	// It can be used when root is disturbed and subtrees are heaps
+	void heapify(int idx,int n){
 		int i = idx;
 		while(i<size){
 			int left = 2*i + 1;
 			int right = 2*i + 2;
-			int curr = min(arr[left],arr[right]);
-			if(arr[i]<arr[left] && arr[i]<arr[right]){
+			if((left>=n || right>=n) || 
+				(arr[i]>arr[left] && arr[i]>arr[right])){
 				break;
 			}
+			int curr = min(arr[left],arr[right]);
 			if(curr == arr[left]){
 				swap(arr[i],arr[left]);
 				i = 2*i + 1;
